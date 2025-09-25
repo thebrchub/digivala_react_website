@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "../styles/main.css";// single global stylesheet
+import React, { useState, useEffect, useRef } from "react";
+import "../styles/main.css";
 
 const Contact = () => {
   const [selectedServices, setSelectedServices] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     document.body.classList.add("loaded");
@@ -24,6 +25,23 @@ const Contact = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownOpen]);
 
   // Handle checkbox selection
   const toggleService = (service) => {
@@ -61,6 +79,7 @@ const Contact = () => {
         alert("✅ Message sent successfully!");
         form.reset();
         setSelectedServices([]);
+        setDropdownOpen(false);
       } else {
         const err = await response.json();
         alert("❌ Failed to send: " + (err.message || response.statusText));
@@ -70,6 +89,18 @@ const Contact = () => {
       alert("⚠️ Something went wrong. Please try again later.");
     }
   };
+
+  const services = [
+    "Digital Marketing",
+    "Social Media Management", 
+    "META Ads",
+    "Google Ads",
+    "Web Development",
+    "Logo Creation",
+    "Advertising",
+    "SMS Marketing",
+    "Email Marketing",
+  ];
 
   return (
     <section className="contact fade-in" id="contact">
@@ -95,19 +126,27 @@ const Contact = () => {
             />
 
             {/* Service Dropdown */}
-            <div className="custom-multiselect">
+            <div className="custom-multiselect" ref={dropdownRef}>
               <div
                 className="select-box"
-                id="serviceSelectBox"
                 onClick={() => setDropdownOpen((prev) => !prev)}
+                role="button"
+                tabIndex="0"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setDropdownOpen((prev) => !prev);
+                  }
+                }}
               >
-                <span id="selectedServices">
+                <span>
                   {selectedServices.length > 0 ? selectedServices.join(", ") : "Select Services"}
                 </span>
-                <i className="arrow"></i>
+                <i className={`arrow ${dropdownOpen ? 'arrow-up' : ''}`}></i>
               </div>
+              
               {dropdownOpen && (
-                <div className="options-container" id="servicesOptions">
+                <div className="options-container">
                   {[
                     "Digital Marketing",
                     "Social Media Management",
