@@ -34,7 +34,7 @@ function Header() {
       <div className="nav-container">
         {/* Logo */}
         <Link to="/" className="logo" onClick={() => setIsOpen(false)}>
-          <img src="src/assets/images/logo.svg" alt="Digivala Logo" />
+          <img src="/images/logo.svg" alt="Digivala Logo" />
           {/* <span className="logo-text"><strong></strong>Digivala</span> */}
         </Link>
 

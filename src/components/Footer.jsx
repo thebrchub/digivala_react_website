@@ -54,7 +54,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
               >
-                <img src="src/assets/images/socials/fb.svg" alt="Facebook" />
+                <img src="/images/socials/fb.svg" alt="Facebook" />
               </a>
               <a
                 href="https://www.instagram.com/digivalaofficial"
@@ -63,7 +63,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
               >
-                <img src="src/assets/images/socials/insta.svg" alt="Instagram" />
+                <img src="/images/socials/insta.svg" alt="Instagram" />
               </a>
               <a
                 href="https://www.linkedin.com/company/digivala"
@@ -72,7 +72,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Follow us on LinkedIn"
               >
-                <img src="src/assets/images/socials/in.svg" alt="LinkedIn" />
+                <img src="/images/socials/in.svg" alt="LinkedIn" />
               </a>
             </div>
           </div>

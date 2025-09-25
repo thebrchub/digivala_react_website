@@ -47,7 +47,7 @@ const AboutScreen = () => {
         />
         <meta name="author" content="Digivala" />
         <link rel="canonical" href="https://www.digivala.in/about" />
-        <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
       </Helmet>
 
       <section className="about fade-in" id="about">
@@ -102,7 +102,7 @@ const AboutScreen = () => {
               ].map((card, index) => (
                 <div className="about-card fade-in" key={index}>
                   <div className="about-media">
-                    <video src={`src/assets/videos/${card.video}`} autoPlay loop muted playsInline></video>
+                    <video src={`/videos/${card.video}`} autoPlay loop muted playsInline></video>
                   </div>
                   <h3>{card.title}</h3>
                   <p>{card.desc}</p>

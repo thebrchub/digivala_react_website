@@ -39,7 +39,7 @@ function Hero() {
             {/* <div className="face front">
               <div className="face-inner">
                 <img
-                  src="src/assets/images/logo_hero.jpg"
+                  src="/images/logo_hero.jpg"
                   alt="Digivala_logo"
                   className="face-img"
                 />
@@ -50,7 +50,7 @@ function Hero() {
             <div className="face front">
               <div className="face-inner">
                 <video
-                  src="src/assets/videos/12.mp4"
+                  src="/videos/12.mp4"
                   autoPlay
                   muted
                   loop
@@ -64,7 +64,7 @@ function Hero() {
             <div className="face back">
               <div className="face-inner">
                 <video
-                  src="src/assets/videos/12.mp4"
+                  src="/videos/12.mp4"
                   autoPlay
                   muted
                   loop
@@ -78,7 +78,7 @@ function Hero() {
             <div className="face right">
               <div className="face-inner">
                 <video
-                  src="src/assets/videos/7.mp4"
+                  src="/videos/7.mp4"
                   autoPlay
                   muted
                   loop
@@ -92,7 +92,7 @@ function Hero() {
             <div className="face left">
               <div className="face-inner">
                 <video
-                  src="src/assets/videos/3.mp4"
+                  src="/videos/3.mp4"
                   autoPlay
                   muted
                   loop
@@ -106,7 +106,7 @@ function Hero() {
             <div className="face top">
               <div className="face-inner">
                 <video
-                  src="src/assets/videos/6.mp4"
+                  src="/videos/6.mp4"
                   autoPlay
                   muted
                   loop
@@ -120,7 +120,7 @@ function Hero() {
             <div className="face bottom">
               <div className="face-inner">
                 <video
-                  src="src/assets/videos/4.mp4"
+                  src="/videos/4.mp4"
                   autoPlay
                   muted
                   loop
