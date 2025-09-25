@@ -1,6 +1,7 @@
 // HomeScreen.jsx
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 
 // Components
@@ -71,10 +72,13 @@ const HomeScreen = () => {
           </p>
 
           <div className="hero-buttons">
-            <a href="/contact/" className="btn-primary">
+  
+            <Link to="/contact" className="btn-primary">
               <span>Start Your Project</span>
               <span></span>
-            </a>
+            </Link>
+
+            {/* External (tel:) → keep normal anchor */}
             <a href="tel:9119728159" className="btn-secondary">
               <span>📞</span>
               <span>Call Us</span>

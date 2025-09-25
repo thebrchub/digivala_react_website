@@ -1,5 +1,5 @@
 import "../styles/main.css"; // single global stylesheet
-
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -25,10 +25,10 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <a href="/contact/" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               <span>Let's Collab</span>
               <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
 

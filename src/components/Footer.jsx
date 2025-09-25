@@ -46,35 +46,45 @@ const Footer = () => {
               Digital solutions that don't just look good – they perform.
               We make waves, not just promises.
             </p>
-            <div className="social-links">
-              <a
-                href="https://www.facebook.com/share/1CTKot76vh/"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Facebook"
-              >
-                <img src="/images/socials/fb.svg" alt="Facebook" />
-              </a>
-              <a
-                href="https://www.instagram.com/digivalaofficial"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Instagram"
-              >
-                <img src="/images/socials/insta.svg" alt="Instagram" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/digivala"
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on LinkedIn"
-              >
-                <img src="/images/socials/in.svg" alt="LinkedIn" />
-              </a>
-            </div>
+           <div className="social-links">
+            <a
+              href="https://www.facebook.com/share/1CTKot76vh/"
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+            >
+              <img src="/images/socials/fb.svg" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.instagram.com/digivalaofficial"
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+            >
+              <img src="/images/socials/insta.svg" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/digivala"
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on LinkedIn"
+            >
+              <img src="/images/socials/in.svg" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://wa.me/919119728159"
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat with us on WhatsApp"
+            >
+              <img src="/images/socials/wa.svg" alt="WhatsApp" />
+            </a>
+          </div>
+
           </div>
 
           {/* Services */}

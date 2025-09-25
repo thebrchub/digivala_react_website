@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/main.css";
 
 const servicesData = [
@@ -57,8 +58,12 @@ const Services = () => {
           <h3 className="cta-heading">
             Your Growth.<span className="highlight"> Our Playbook.</span>
           </h3>
-          <p className="cta-subtext">From ads to design, we've got the moves to keep your brand winning.</p>
-          <a href="/contact/" className="cta-button">Let's Talk</a>
+          <p className="cta-subtext">
+            From ads to design, we've got the moves to keep your brand winning.
+          </p>
+          <Link to="/contact" className="cta-button">
+            Let's Talk
+          </Link>
         </div>
       </div>
     </section>
