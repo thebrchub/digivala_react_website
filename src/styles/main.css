@@ -1860,85 +1860,79 @@
         }
 
         /* Contact Us */
-        .contact {
-        padding: 8rem 0;
-        /* background: var(--dark); */
-        text-align: center;
-        }
+/* Contact Us */
+.contact {
+  padding: 8rem 0;
+  text-align: center;
+}
 
-        .contact-content {
-        max-width: 700px;
-        margin: 0 auto;
-        }
+.contact-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-        .contact h2 {
-        font-family: 'Inter', sans-serif;
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 700;
-        margin-bottom: 1rem;
-        }
+.contact h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-        .contact .highlight {
-        color: #38bdf8; /* sky blue accent */
-        }
+.contact .highlight {
+  color: #38bdf8;
+}
 
-        .contact p {
-        color: var(--text-secondary);
-        margin-bottom: 2rem;
-        }
+.contact p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
 
-        /* Form */
-        .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 500px;
-        margin: 0 auto;
-        }
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
-        .input-field {
-            padding: 1rem 1.5rem;
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--text-primary);
-            outline: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
+.input-field {
+  padding: 1rem 1.5rem;
+  background: var(--dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
 
-        .input-field:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-        }
+.input-field:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
 
-        /* Button */
-        .submit-btn {
-         padding: 1rem 2rem;
-            background: var(--button_send);
-            border: none;
-            border-radius: 50px;
-            color: var(--white);
-            font-family: 'Inter', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            /* text-transform: uppercase; */
-        }
+/* Button */
+.submit-btn {
+  padding: 1rem 2rem;
+  background: var(--button_send);
+  border: none;
+  border-radius: 50px;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(6, 255, 165, 0.3);
-        }
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(6, 255, 165, 0.3);
+}
 
-        /* .multi-select {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        } */
-
+/* Custom Multiselect */
 .custom-multiselect {
   position: relative;
   width: 100%;
@@ -1947,19 +1941,20 @@
 }
 
 .select-box {
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 12px 15px;
+  background: var(--dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 .select-box:hover {
-  border-color: #f97316;
+  border-color: var(--primary);
 }
 
 .arrow {
@@ -1972,15 +1967,16 @@
   transition: transform 0.3s ease;
 }
 
+/* FIXED: Show options when dropdown is open */
 .options-container {
-  display: none;
+  display: block; /* Changed from 'none' to 'block' */
   position: absolute;
   top: 110%;
   left: 0;
   width: 100%;
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 8px;
+  background: var(--dark-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   max-height: 250px;
   overflow-y: auto;
@@ -1995,7 +1991,7 @@
   width: 18px;
   height: 18px;
   border: 2px solid #f97316;
-  border-radius: 50%; /* ✅ Makes it round */
+  border-radius: 50%;
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -2010,7 +2006,7 @@
   border-color: #f97316;
 }
 
-/* Checkmark (custom tick inside circle) */
+/* Checkmark */
 .options-container input[type="checkbox"]:checked::after {
   content: "✔";
   position: absolute;
@@ -2021,21 +2017,17 @@
   transform: translate(-50%, -50%);
 }
 
-
 .options-container label {
   display: block;
   padding: 10px 15px;
   cursor: pointer;
   transition: background 0.2s ease;
-  text-align: left;     
+  text-align: left;
+  color: var(--text-primary);
 }
 
 .options-container label:hover {
-  background: #222;
-}
-
-.options-container input {
-  margin-right: 8px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 
