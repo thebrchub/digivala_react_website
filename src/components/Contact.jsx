@@ -4,12 +4,14 @@ import "../styles/main.css";
 const Contact = () => {
   const [selectedServices, setSelectedServices] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const dropdownRef = useRef(null);
 
   useEffect(() => {
     document.body.classList.add("loaded");
 
-    // Fade-in animation
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, i) => {
@@ -35,24 +37,28 @@ const Contact = () => {
     };
 
     if (dropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownOpen]);
 
   // Handle checkbox selection
   const toggleService = (service) => {
     setSelectedServices((prev) =>
-      prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
+      prev.includes(service)
+        ? prev.filter((s) => s !== service)
+        : [...prev, service]
     );
   };
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setErrorMsg("");
     const form = e.target;
 
     const data = {
@@ -65,42 +71,34 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch("https://mail-porter.vercel.app/api/email/send-email/gmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-          "x-api-key": "SuperSecretApiKey123!@#",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://mail-porter.vercel.app/api/email/send-email/gmail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+            "x-api-key": "SuperSecretApiKey123!@#",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
-        alert("✅ Message sent successfully!");
         form.reset();
         setSelectedServices([]);
         setDropdownOpen(false);
+        setSuccessModal(true);
       } else {
         const err = await response.json();
-        alert("❌ Failed to send: " + (err.message || response.statusText));
+        setErrorMsg(err.message || "Failed to send. Try again later.");
       }
     } catch (error) {
-      console.error(error);
-      alert("⚠️ Something went wrong. Please try again later.");
+      setErrorMsg("Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
     }
   };
-
-  const services = [
-    "Digital Marketing",
-    "Social Media Management", 
-    "META Ads",
-    "Google Ads",
-    "Web Development",
-    "Logo Creation",
-    "Advertising",
-    "SMS Marketing",
-    "Email Marketing",
-  ];
 
   return (
     <section className="contact fade-in" id="contact">
@@ -132,19 +130,15 @@ const Contact = () => {
                 onClick={() => setDropdownOpen((prev) => !prev)}
                 role="button"
                 tabIndex="0"
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setDropdownOpen((prev) => !prev);
-                  }
-                }}
               >
                 <span>
-                  {selectedServices.length > 0 ? selectedServices.join(", ") : "Select Services"}
+                  {selectedServices.length > 0
+                    ? selectedServices.join(", ")
+                    : "Select Services"}
                 </span>
-                <i className={`arrow ${dropdownOpen ? 'arrow-up' : ''}`}></i>
+                <i className={`arrow ${dropdownOpen ? "arrow-up" : ""}`}></i>
               </div>
-              
+
               {dropdownOpen && (
                 <div className="options-container">
                   {[
@@ -180,12 +174,27 @@ const Contact = () => {
               required
             ></textarea>
 
-            <button type="submit" className="submit-btn">
-              Send Message
+            <button type="submit" className="submit-btn" disabled={loading}>
+              {loading ? <span className="loader"></span> : "Send Message"}
             </button>
+
+            {errorMsg && <p className="error-text">{errorMsg}</p>}
           </form>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {successModal && (
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <h3>🎉 Message Sent Successfully!</h3>
+            <p>Our team will get back to you within 24 hours.</p>
+            <button className="close-btn" onClick={() => setSuccessModal(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
