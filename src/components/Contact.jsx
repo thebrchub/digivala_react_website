@@ -355,7 +355,7 @@ const Contact = () => {
             border: '1px solid rgba(99,102,241,0.3)',
             boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
           }}>
-            <h3 style={{marginBottom: '0.5rem', color: '#fff'}}>🎉 Message Sent Successfully!</h3>
+            <h3 style={{marginBottom: '0.5rem', color: '#fff'}}>Message Sent Successfully!</h3>
             <p style={{color: '#a1a1aa'}}>Our team will get back to you within 24 hours.</p>
             <button 
               onClick={() => setSuccessModal(false)}
