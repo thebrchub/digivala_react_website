@@ -1864,7 +1864,6 @@
         }
 
         /* Contact Us */
-/* Contact Us */
 .contact {
   padding: 8rem 0;
   text-align: center;
@@ -1971,9 +1970,12 @@
   transition: transform 0.3s ease;
 }
 
-/* FIXED: Show options when dropdown is open */
+.arrow-up {
+  transform: rotate(-135deg);
+}
+
+/* Dropdown options (animated) */
 .options-container {
-  display: block; /* Changed from 'none' to 'block' */
   position: absolute;
   top: 110%;
   left: 0;
@@ -1982,9 +1984,19 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  max-height: 0;              /* collapsed by default */
+  overflow: hidden;           /* hide content when closed */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;  /* smooth fade + slide */
+  z-index: 999;
+}
+
+.custom-multiselect.open .options-container {
   max-height: 250px;
+  opacity: 1;
+  transform: translateY(0);
   overflow-y: auto;
-  z-index: 10;
 }
 
 /* Hide the default checkbox */
@@ -2022,12 +2034,18 @@
 }
 
 .options-container label {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 10px 15px;
   cursor: pointer;
   transition: background 0.2s ease;
   text-align: left;
   color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.options-container label:last-child {
+  border-bottom: none;
 }
 
 .options-container label:hover {
