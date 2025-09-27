@@ -56,17 +56,7 @@ function Hero() {
         {/* Right Side - 3D Dice */}
         <div className="hero-visual">
           <div className="hero-dice">
-            {/* Logo Face */}
-            {/* <div className="face front">
-              <div className="face-inner">
-                <img
-                  src="/images/logo_hero.jpg"
-                  alt="Digivala_logo"
-                  className="face-img"
-                />
-              </div>
-            </div> */}
-
+           
             {/* Video Faces */}
             <div className="face front">
               <div className="face-inner">

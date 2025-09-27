@@ -33,7 +33,7 @@ const Features = () => {
         canonical="https://digivala.in/features"
         ogTitle="Digivala Features"
         ogDescription="From real-time analytics to growth accelerators — see how Digivala empowers your brand."
-        ogImage="https://digivala.in/logo_hero.jpg"
+        ogImage="https://digivala.in/images/logo_hero.jpg"
       />
 
       {/* Features Section */}
