@@ -91,11 +91,11 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Services</h4>
             <ul>
-              <li><a href="#web-development">Web Development</a></li>
-              <li><a href="#social-media">Social Media</a></li>
-              <li><a href="#seo-marketing">SEO & Marketing</a></li>
-              <li><a href="#brand-design">Brand Design</a></li>
-              <li><a href="#content-creation">Content Creation</a></li>
+              <li><a >Web Development</a></li>
+              <li><a >Social Media</a></li>
+              <li><a >SEO & Marketing</a></li>
+              <li><a >Brand Design</a></li>
+              <li><a >Content Creation</a></li>
             </ul>
           </div>
 

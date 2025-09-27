@@ -456,12 +456,12 @@
    =========================================== */
 
 .hero-visual {
-    position: relative;
+     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1500px;
-    /* Only the visual/cube slides in from left */
+    /* Keep the slide-in animation that makes it visible */
     animation: slideInFromLeft 2.5s ease-out forwards;
     transform: translateX(-100vw);
     opacity: 0;
@@ -473,10 +473,14 @@
     width: 250px;
     height: 250px;
     transform-style: preserve-3d;
-    animation: spin 12s infinite linear;
+    /* Make the spin animation run automatically - change from 12s to 6s for faster rotation */
+    animation: spin 6s infinite linear;
     transform: rotateX(-15deg) rotateY(-15deg);
 }
 
+.hero-dice:hover {
+    animation-play-state: paused;
+}
 /* Cube Faces */
 .face {
     position: absolute;

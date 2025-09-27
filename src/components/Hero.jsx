@@ -1,7 +1,28 @@
-import "../styles/main.css"; // single global stylesheet
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import "../assets/css/style.css";
 
 function Hero() {
+  const diceRef = useRef(null);
+
+  useEffect(() => {
+    const dice = diceRef.current;
+    if (!dice) return;
+
+    // Simple hover pause/play - just like your HTML version
+    const pause = () => { dice.style.animationPlayState = "paused"; };
+    const play = () => { dice.style.animationPlayState = "running"; };
+    
+    dice.addEventListener("mouseenter", pause);
+    dice.addEventListener("mouseleave", play);
+
+    // Cleanup
+    return () => {
+      dice.removeEventListener("mouseenter", pause);
+      dice.removeEventListener("mouseleave", play);
+    };
+  }, []);
+
   return (
     <section className="hero" id="home">
       <div className="hero-container">

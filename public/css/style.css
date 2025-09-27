@@ -610,6 +610,15 @@
         transform: rotateX(345deg) rotateY(345deg); 
     }
 }
+/* Cube Rotation Animation */
+@keyframes spin {
+    from { 
+        transform: rotateX(-15deg) rotateY(-15deg); 
+    }
+    to { 
+        transform: rotateX(345deg) rotateY(345deg); 
+    }
+}
 
 /* Badge Pulse Animation */
 @keyframes pulse-badge {
@@ -744,7 +753,6 @@
     .top    { transform: rotateX(90deg) translateZ(60px); }
     .bottom { transform: rotateX(-90deg) translateZ(60px); }
 }
-
 
         .hero-graphic {
             width: 500px;
