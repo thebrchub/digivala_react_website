@@ -6,7 +6,7 @@ const Features = () => {
   useEffect(() => {
     document.body.classList.add("loaded");
 
-    // Fade-in animation
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, i) => {
@@ -24,7 +24,7 @@ const Features = () => {
 
   return (
     <>
-      {/* SEO Meta Tags */}
+      {}
       <SEO
         title="Our Features | Digivala"
         description="Explore Digivala’s premium features — ROI-driven results, lightning speed execution, and strategies tailored to your unique brand DNA."
@@ -33,10 +33,10 @@ const Features = () => {
         canonical="https://digivala.in/features"
         ogTitle="Digivala Features"
         ogDescription="From real-time analytics to growth accelerators — see how Digivala empowers your brand."
-        ogImage="https://digivala.in/images/logo_hero.jpg"
+        ogImage="https://digivala.in/images/og-features.jpg"
       />
 
-      {/* Features Section */}
+      {}
       <section className="features fade-in" id="features">
         <div className="container">
           <div className="features-container">

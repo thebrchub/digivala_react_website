@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "../styles/main.css"; // make sure scrolling animation CSS exists
+import "../styles/main.css"; 
 
 const testimonialsData = [
   {
@@ -56,19 +56,19 @@ const Testimonials = () => {
 
     if (!track || !group) return;
 
-    // Clone groups for seamless scroll
+    
     for (let i = 0; i < 2; i++) {
       const clone = group.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
       track.appendChild(clone);
     }
 
-    // Set CSS variable for animation width
+    
     const groupWidth = group.getBoundingClientRect().width;
     track.style.setProperty("--group-width", `${groupWidth}px`);
     track.classList.add("scrolling");
 
-    // Pause on hover
+    
     const handleMouseEnter = () => { track.style.animationPlayState = "paused"; };
     const handleMouseLeave = () => { track.style.animationPlayState = "running"; };
 

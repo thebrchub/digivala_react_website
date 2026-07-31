@@ -9,14 +9,14 @@ function Hero() {
     const dice = diceRef.current;
     if (!dice) return;
 
-    // Simple hover pause/play - just like your HTML version
+    
     const pause = () => { dice.style.animationPlayState = "paused"; };
     const play = () => { dice.style.animationPlayState = "running"; };
     
     dice.addEventListener("mouseenter", pause);
     dice.addEventListener("mouseleave", play);
 
-    // Cleanup
+    
     return () => {
       dice.removeEventListener("mouseenter", pause);
       dice.removeEventListener("mouseleave", play);
@@ -26,7 +26,7 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-container">
-        {/* Left Side - Content */}
+        {}
         <div className="hero-content fade-in">
           <div className="hero-badge">
             <span>✨</span>
@@ -53,11 +53,11 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Side - 3D Dice */}
+        {}
         <div className="hero-visual">
           <div className="hero-dice">
            
-            {/* Video Faces */}
+            {}
             <div className="face front">
               <div className="face-inner">
                 <video

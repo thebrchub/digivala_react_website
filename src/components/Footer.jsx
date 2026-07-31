@@ -5,7 +5,7 @@ import "../styles/main.css";
 const Footer = () => {
   const [openModal, setOpenModal] = useState(null);
 
-  // Close modal on escape key
+  
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape" && openModal) {
@@ -15,7 +15,7 @@ const Footer = () => {
 
     if (openModal) {
       document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden"; // Prevent background scroll
+      document.body.style.overflow = "hidden"; 
     } else {
       document.body.style.overflow = "unset";
     }
@@ -38,9 +38,9 @@ const Footer = () => {
     <>
       <footer className="footer">
         <div className="container">
-          {/* Top Content */}
+          {}
           <div className="footer-content">
-            {/* Brand */}
+            {}
             <div className="footer-brand">
               <h3>Digivala</h3>
               <p>
@@ -49,7 +49,7 @@ const Footer = () => {
               </p>
               <div className="social-links">
                 <a
-                  href="https://www.facebook.com/share/1CTKot76vh/"
+                  href="https://www.facebook.com/"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,7 +58,7 @@ const Footer = () => {
                   <img src="/images/socials/fb.svg" alt="Facebook" />
                 </a>
                 <a
-                  href="https://www.instagram.com/digivalaofficial"
+                  href="https://www.instagram.com/"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,7 +67,7 @@ const Footer = () => {
                   <img src="/images/socials/insta.svg" alt="Instagram" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/digivala"
+                  href="https://www.linkedin.com/"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -87,7 +87,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Services */}
+            {}
             <div className="footer-links">
               <h4>Services</h4>
               <ul>
@@ -99,7 +99,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Company - Updated to use React Router */}
+            {}
             <div className="footer-links">
               <h4>Company</h4>
               <ul>
@@ -111,7 +111,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact Info */}
+            {}
             <div className="footer-links">
               <h4>Contact Info</h4>
               <ul>
@@ -129,7 +129,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom */}
+          {}
           <div className="footer-bottom">
             <p>&copy; 2025 HireEdge Digital Solutions LLP. All rights reserved.</p>
             <div className="footer-bottom-links">
@@ -158,7 +158,7 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Terms Modal */}
+      {}
       {openModal === "terms" && (
         <div 
           onClick={handleBackdropClick}
@@ -281,7 +281,7 @@ const Footer = () => {
         </div>
       )}
 
-      {/* Privacy Modal */}
+      {}
       {openModal === "privacy" && (
         <div 
           onClick={handleBackdropClick}

@@ -1,8 +1,6 @@
 'use strict';
 
-/**
- * Utility: add Event on multiple elements
- */
+
 const addEventOnElem = function (elem, type, callback) {
   if (elem && elem.length > 1) {
     for (let i = 0; i < elem.length; i++) {
@@ -13,9 +11,7 @@ const addEventOnElem = function (elem, type, callback) {
   }
 };
 
-/**
- * Inject header and footer, return a Promise when done
- */
+
 const injectHeaderFooter = () => {
   const headerPromise = fetch("header.html")
     .then(res => res.text())
@@ -32,9 +28,7 @@ const injectHeaderFooter = () => {
   return Promise.all([headerPromise, footerPromise]);
 };
 
-/**
- * Navbar toggle
- */
+
 const initNavbar = (overlay) => {
   const navbar = document.querySelector("[data-navbar]");
   const navTogglers = document.querySelectorAll("[data-nav-toggler]");
@@ -56,13 +50,11 @@ const initNavbar = (overlay) => {
 
   addEventOnElem(navbarLinks, "click", closeNavbar);
 
-  // Close navbar when overlay is clicked
+  
   if (overlay) overlay.addEventListener("click", closeNavbar);
 };
 
-/**
- * Header & back-to-top button show when scroll down
- */
+
 const initHeaderScroll = () => {
   const header = document.querySelector("[data-header]");
   const backTopBtn = document.querySelector("[data-back-top-btn]");
@@ -82,9 +74,7 @@ const initHeaderScroll = () => {
   addEventOnElem(window, "scroll", headerActive);
 };
 
-/**
- * Intersection Observer for fade-in animations
- */
+
 const initFadeInObserver = () => {
   const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
   const observer = new IntersectionObserver((entries) => {
@@ -96,9 +86,7 @@ const initFadeInObserver = () => {
   document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 };
 
-/**
- * Hero Graphic Animation
- */
+
 const initHeroAnimation = () => {
   const heroEl = document.querySelector('.hero-graphic');
   if (!heroEl) return;
@@ -115,9 +103,7 @@ const initHeroAnimation = () => {
   heroObserver.observe(heroEl);
 };
 
-/**
- * Page transition: Fade In / Fade Out with fade-page class
- */
+
 const initPageTransitions = () => {
   document.body.classList.add("fade-page");
 
@@ -146,9 +132,7 @@ const initPageTransitions = () => {
   });
 };
 
-/**
- * Initialize everything after header/footer is loaded
- */
+
 injectHeaderFooter().then(() => {
   const overlay = document.querySelector(".overlay");
   initNavbar(overlay);

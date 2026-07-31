@@ -1,4 +1,4 @@
-// App.jsx
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -7,15 +7,15 @@ import AboutScreen from "./components/About";
 import ServicesScreen from "./components/Services";
 import FeaturesScreen from "./components/Features";
 import ContactScreen from "./components/Contact";
-import ScrollToTop from "./components/ScrollToTop"; // 👈 import helper
+import ScrollToTop from "./components/ScrollToTop"; 
 
 function App() {
   return (
     <Router>
-      {/* This ensures every route change scrolls back to top */}
+      {}
       <ScrollToTop />
 
-      <Header /> {/* Always visible */}
+      <Header /> {}
 
       <Routes>
         <Route path="/" element={<HomeScreen />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/contact" element={<ContactScreen />} />
       </Routes>
 
-      <Footer /> {/* Always visible */}
+      <Footer /> {}
     </Router>
   );
 }

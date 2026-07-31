@@ -1,22 +1,22 @@
-// AboutScreen.jsx
+
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import "../styles/main.css"; // existing CSS
+import "../styles/main.css"; 
 
 const AboutScreen = () => {
   useEffect(() => {
-    // Fade-in on page load
+    
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 0.3s ease";
     requestAnimationFrame(() => { document.body.style.opacity = "1"; });
 
-    // Add class for any global loaded styles
+    
     document.body.classList.add("loaded");
 
-    // Scroll to top
+    
     window.scrollTo(0, 0);
 
-    // IntersectionObserver for fade-in elements
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry, i) => {
@@ -46,7 +46,7 @@ const AboutScreen = () => {
           content="Digivala, About, Digital Marketing, Web Development, Social Media, Brand Design"
         />
         <meta name="author" content="Digivala" />
-        <link rel="canonical" href="https://www.digivala.in/about" />
+        <link rel="canonical" href="https://digivala.in/about" />
         <link rel="icon" type="image/png" href="/images/favicon.png" />
       </Helmet>
 
@@ -90,7 +90,7 @@ const AboutScreen = () => {
               </p>
             </div>
 
-            {/* About Grid */}
+            {}
             <div className="about-grid">
               {[
                 { video: "10.mp4", title: "Expertise", desc: "A multidisciplinary team with proven expertise" },

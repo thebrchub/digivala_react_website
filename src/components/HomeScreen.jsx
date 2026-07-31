@@ -1,33 +1,34 @@
-// HomeScreen.jsx
+
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 
-// Components
+
 import Header from "./Header";
 import HeroSection from "./Hero";
 import AboutSnippet from "./About";
 import HomeSnippets from "./HomeSnippets";
 import TestimonialsSection from "./Testimonials";
-// import CTASection from "./CTASection";
+
 import Footer from "./Footer";
 
-// Optional: page-level animations / fade-in
-import "../styles/main.css"; // include any fade-in CSS or global home screen styles
+
+import "../styles/main.css"; 
 
 const HomeScreen = () => {
 
+  
   useEffect(() => {
-    // Page fade-in
+    
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 0.3s ease";
     requestAnimationFrame(() => { document.body.style.opacity = "1"; });
 
-     // Add this line
+     
     document.body.classList.add("loaded");
 
-    // Scroll to top on load
+    
     window.scrollTo(0, 0);
   }, []);
 
@@ -39,28 +40,28 @@ const HomeScreen = () => {
         <meta name="description" content="Digivala provides top-notch digital marketing, web development, and creative solutions." />
         <meta name="keywords" content="Digital Marketing, Web Development, SEO, Social Media, Brand Design" />
         <meta name="author" content="Digivala" />
-        <link rel="canonical" href="https://www.digivala.in/" />
+        <link rel="canonical" href="https://digivala.in/" />
       </Helmet>
 
-      {/* Animated Background - Add this! */}
+      {}
       <div className="bg-animation"></div>
 
-      {/* Header */}
+      {}
       <Header />
 
-      {/* Hero Section */}
+      {}
       <HeroSection />
 
-      {/* About Section */}
-      {/* <AboutSnippet /> */}
+      {}
+      {}
 
-      {/* Home Snippets (Services, Features, Stats, etc) */}
+      {}
       <HomeSnippets />
 
-      {/* Testimonials */}
+      {}
       <TestimonialsSection />
 
-      {/* Refined Home CTA */}
+      {}
       <section className="cta-section fade-in">
         <div className="cta-home">
           <h2>
@@ -78,18 +79,23 @@ const HomeScreen = () => {
               <span></span>
             </Link>
 
-            {/* External (tel:) → keep normal anchor */}
+            {}
             <a href="tel:9119728159" className="btn-secondary">
               <span>📞</span>
               <span>Call Us</span>
             </a>
           </div>
+          
         </div>
+        
       </section>
+      
 
       
     </>
+    
   );
+  
 };
 
 export default HomeScreen;

@@ -27,7 +27,7 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Close dropdown when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -44,7 +44,7 @@ const Contact = () => {
     };
   }, [dropdownOpen]);
 
-  // Handle checkbox selection
+  
   const toggleService = (service) => {
     setSelectedServices((prev) =>
       prev.includes(service)
@@ -53,7 +53,7 @@ const Contact = () => {
     );
   };
 
-  // Handle form submission
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -70,9 +70,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await fetch(
-        "https://mail-porter.vercel.app/api/email/send-email/gmail",
-        {
+      const response = await fetch("/api/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -192,7 +190,7 @@ const Contact = () => {
               }}
             />
 
-            {/* Simplified Service Dropdown */}
+            {}
             <div style={{ position: 'relative' }} ref={dropdownRef}>
               <div
                 onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -331,7 +329,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Success Modal */}
+      {}
       {successModal && (
         <div style={{
           position: 'fixed',
